@@ -5,7 +5,7 @@
     "title": "Swagger Implementation",
     "description": "swagger implementation to this APIs"
   },
-  "host": "ehospi-final.herokuapp.com",
+  "host": "done-ehospi.herokuapp.com/",
   "basePath": "/",
   "tags": [
     {
@@ -214,6 +214,61 @@
         "responses": {}
       }
     },
+
+    "/addservices": {
+      "post": {
+        "tags": ["Add Services"],
+        "summary": "Add Services",
+        "description": "",
+        "consumes": ["application/json", "application/xml"],
+        "produces": ["application/xml", "application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Add Services",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "service1": {
+                  "type": "string",
+                  "required": true
+                },
+                "service2": {
+                  "type": "string",
+                  "required": true
+                },
+                "service3": {
+                  "type": "string",
+                  "required": true
+                },
+                "service4": {
+                  "type": "string",
+                  "required": true
+                },
+                "service5": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/allservices": {
+      "get": {
+        "tags": ["To get all the services"],
+        "summary": "To get all the services",
+        "description": "",
+        "consumes": ["application/json", "application/xml"],
+        "produces": ["application/xml", "application/json"],
+        "responses": {}
+      }
+    },
+
     "/hospitalForm": {
       "post": {
         "tags": ["Hospital form"],
