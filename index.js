@@ -2,8 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const allRoutes = require("./routes/route");
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("./swagger/swagger.json");
+// const swaggerUi = require("swagger-ui-express");
+// const swaggerDocument = require("./swagger/swagger.json");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -21,5 +21,5 @@ async function main() {
 }
 main();
 
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.listen(port, () => console.log(`Server listening on port ${port}`));

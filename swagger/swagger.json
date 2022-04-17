@@ -1,519 +1,519 @@
-{
-  "swagger": "2.0",
-  "info": {
-    "version": "1.0.0",
-    "title": "Swagger Implementation",
-    "description": "Swagger implementation to these APIs"
-  },
-  "host": "ehospi-final.herokuapp.com",
-  "basePath": "/",
-  "tags": [
-    {
-      "name": "Application"
-    }
-  ],
-  "schemes": ["http", "https"],
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
-  "securityDefinitions": {
-    "Bearer": {
-      "type": "apiKey",
-      "name": "Authorization",
-      "in": "header"
-    }
-  },
-  "paths": {
-    "/login_with_phone": {
-      "post": {
-        "tags": ["Login with Phone"],
-        "summary": "Login with phone",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Login with phone",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "phone": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/verifyOTP": {
-      "post": {
-        "tags": ["verify OTP"],
-        "summary": "verify OTP",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "verify OTP",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "details": {
-                  "type": "string",
-                  "required": true
-                },
-                "otp": {
-                  "type": "number",
-                  "required": true
-                },
-                "phone": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/register_with_phone": {
-      "post": {
-        "security": [{ "Bearer": [] }],
-        "tags": ["To register a user"],
-        "summary": "To register a user",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Add new user",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "fullName": {
-                  "type": "string",
-                  "required": true
-                },
-                "dateOfBirth": {
-                  "type": "string",
-                  "required": true
-                },
-                "gender": {
-                  "type": "string",
-                  "required": true
-                },
-                "email": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
+// {
+//   "swagger": "2.0",
+//   "info": {
+//     "version": "1.0.0",
+//     "title": "Swagger Implementation",
+//     "description": "Swagger implementation to these APIs"
+//   },
+//   "host": "ehospi-final.herokuapp.com",
+//   "basePath": "/",
+//   "tags": [
+//     {
+//       "name": "Application"
+//     }
+//   ],
+//   "schemes": ["http", "https"],
+//   "consumes": ["application/json"],
+//   "produces": ["application/json"],
+//   "securityDefinitions": {
+//     "Bearer": {
+//       "type": "apiKey",
+//       "name": "Authorization",
+//       "in": "header"
+//     }
+//   },
+//   "paths": {
+//     "/login_with_phone": {
+//       "post": {
+//         "tags": ["Login with Phone"],
+//         "summary": "Login with phone",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Login with phone",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "phone": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/verifyOTP": {
+//       "post": {
+//         "tags": ["verify OTP"],
+//         "summary": "verify OTP",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "verify OTP",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "details": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "otp": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "phone": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/register_with_phone": {
+//       "post": {
+//         "security": [{ "Bearer": [] }],
+//         "tags": ["To register a user"],
+//         "summary": "To register a user",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Add new user",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "fullName": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "dateOfBirth": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "gender": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "email": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
 
-        "responses": {}
-      }
-    },
-    "/uploadPicture": {
-      "post": {
-        "tags": ["To upload a image of a user"],
-        "summary": "To upload image of the user",
-        "consumes": ["multipart/form-data"],
-        "parameters": [
-          {
-            "in": "formData",
-            "name": "upfile",
-            "type": "file",
-            "description": "The file to upload :"
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/profile": {
-      "get": {
-        "security": [{ "Bearer": [] }],
-        "tags": ["To get profile of user"],
-        "summary": "To get profile of user",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "responses": {}
-      }
-    },
-    "/addHospital": {
-      "post": {
-        "tags": ["Add Hospital"],
-        "summary": "Add Hospital",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Add Hospital",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "hospitalName": {
-                  "type": "string",
-                  "required": true
-                },
-                "hospitalLocation": {
-                  "type": "string",
-                  "required": true
-                },
-                "latitude": {
-                  "type": "number",
-                  "required": true
-                },
-                "longitude": {
-                  "type": "number",
-                  "required": true
-                },
-                "alldoctors": {
-                  "type": "number",
-                  "required": true
-                },
-                "allbeds": {
-                  "type": "number",
-                  "required": true
-                },
-                "ambulances": {
-                  "type": "number",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/findHospital": {
-      "get": {
-        "tags": ["To get profile of user"],
-        "summary": "To get profile of user",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "responses": {}
-      }
-    },
+//         "responses": {}
+//       }
+//     },
+//     "/uploadPicture": {
+//       "post": {
+//         "tags": ["To upload a image of a user"],
+//         "summary": "To upload image of the user",
+//         "consumes": ["multipart/form-data"],
+//         "parameters": [
+//           {
+//             "in": "formData",
+//             "name": "upfile",
+//             "type": "file",
+//             "description": "The file to upload :"
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/profile": {
+//       "get": {
+//         "security": [{ "Bearer": [] }],
+//         "tags": ["To get profile of user"],
+//         "summary": "To get profile of user",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "responses": {}
+//       }
+//     },
+//     "/addHospital": {
+//       "post": {
+//         "tags": ["Add Hospital"],
+//         "summary": "Add Hospital",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Add Hospital",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "hospitalName": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "hospitalLocation": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "latitude": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "longitude": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "alldoctors": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "allbeds": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "ambulances": {
+//                   "type": "number",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/findHospital": {
+//       "get": {
+//         "tags": ["To get profile of user"],
+//         "summary": "To get profile of user",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "responses": {}
+//       }
+//     },
 
-    "/addservices": {
-      "post": {
-        "tags": ["Add Services"],
-        "summary": "Add Services",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Add Services",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "service1": {
-                  "type": "string",
-                  "required": true
-                },
-                "service2": {
-                  "type": "string",
-                  "required": true
-                },
-                "service3": {
-                  "type": "string",
-                  "required": true
-                },
-                "service4": {
-                  "type": "string",
-                  "required": true
-                },
-                "service5": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/allservices": {
-      "get": {
-        "tags": ["To get all the services"],
-        "summary": "To get all the services",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "responses": {}
-      }
-    },
+//     "/addservices": {
+//       "post": {
+//         "tags": ["Add Services"],
+//         "summary": "Add Services",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Add Services",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "service1": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "service2": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "service3": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "service4": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "service5": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/allservices": {
+//       "get": {
+//         "tags": ["To get all the services"],
+//         "summary": "To get all the services",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "responses": {}
+//       }
+//     },
 
-    "/hospitalForm": {
-      "post": {
-        "tags": ["Hospital form"],
-        "summary": "Hospital form",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Add Hospital",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "patientName": {
-                  "type": "string",
-                  "required": true
-                },
-                "familyMember": {
-                  "type": "string",
-                  "required": true
-                },
-                "dob": {
-                  "type": "string",
-                  "required": true
-                },
-                "gender": {
-                  "type": "string",
-                  "required": true
-                },
-                "fatherHusbandName": {
-                  "type": "string",
-                  "required": true
-                },
-                "address": {
-                  "type": "string",
-                  "required": true
-                },
-                "phone": {
-                  "type": "string",
-                  "required": true
-                },
-                "email": {
-                  "type": "string",
-                  "required": true
-                },
-                "nationality": {
-                  "type": "string",
-                  "required": true
-                },
-                "religion": {
-                  "type": "string",
-                  "required": true
-                },
-                "monthlyIncome": {
-                  "type": "number",
-                  "required": true
-                },
-                "occupation": {
-                  "type": "string",
-                  "required": true
-                },
-                "altPhone": {
-                  "type": "string",
-                  "required": true
-                },
-                "doctorName": {
-                  "type": "string",
-                  "required": true
-                },
-                "policyNumber": {
-                  "type": "string",
-                  "required": true
-                },
-                "employerName": {
-                  "type": "string",
-                  "required": true
-                },
-                "employerId": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/getAllBooking": {
-      "get": {
-        "tags": ["To get all bed bookings"],
-        "summary": "To get all bed bookings",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "responses": {}
-      }
-    },
-    "/hospitalBedBooking": {
-      "post": {
-        "tags": ["Book hospital bed"],
-        "summary": "Book hospital bed",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Book bed",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "bookingId": {
-                  "type": "number",
-                  "required": true
-                },
-                "hospital": {
-                  "type": "string",
-                  "required": true
-                },
-                "date": {
-                  "type": "string",
-                  "required": true
-                },
-                "time": {
-                  "type": "string",
-                  "required": true
-                },
-                "phone": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/updateBedBooking": {
-      "put": {
-        "tags": ["Update Bed Booking"],
-        "summary": "Update bed booking",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Book bed",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "bookingId": {
-                  "type": "number",
-                  "required": true
-                },
-                "date": {
-                  "type": "string",
-                  "required": true
-                },
-                "time": {
-                  "type": "string",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/deleteBooking": {
-      "delete": {
-        "tags": ["Delete Bed Booking"],
-        "summary": "Delete bed booking",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Book bed",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "bookingId": {
-                  "type": "number",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/distance": {
-      "post": {
-        "tags": ["Location"],
-        "summary": "Location",
-        "description": "",
-        "consumes": ["application/json", "application/xml"],
-        "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Get location km wise",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "myLocation": {
-                  "type": "object",
-                  "properties": {
-                    "latitude": {
-                      "type": "number",
-                      "required": true
-                    },
-                    "longitude": {
-                      "type": "number",
-                      "required": true
-                    }
-                  }
-                },
-                "distance": {
-                  "type": "number",
-                  "required": true
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    }
-  }
-}
+//     "/hospitalForm": {
+//       "post": {
+//         "tags": ["Hospital form"],
+//         "summary": "Hospital form",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Add Hospital",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "patientName": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "familyMember": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "dob": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "gender": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "fatherHusbandName": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "address": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "phone": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "email": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "nationality": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "religion": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "monthlyIncome": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "occupation": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "altPhone": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "doctorName": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "policyNumber": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "employerName": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "employerId": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/getAllBooking": {
+//       "get": {
+//         "tags": ["To get all bed bookings"],
+//         "summary": "To get all bed bookings",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "responses": {}
+//       }
+//     },
+//     "/hospitalBedBooking": {
+//       "post": {
+//         "tags": ["Book hospital bed"],
+//         "summary": "Book hospital bed",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Book bed",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "bookingId": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "hospital": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "date": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "time": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "phone": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/updateBedBooking": {
+//       "put": {
+//         "tags": ["Update Bed Booking"],
+//         "summary": "Update bed booking",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Book bed",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "bookingId": {
+//                   "type": "number",
+//                   "required": true
+//                 },
+//                 "date": {
+//                   "type": "string",
+//                   "required": true
+//                 },
+//                 "time": {
+//                   "type": "string",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/deleteBooking": {
+//       "delete": {
+//         "tags": ["Delete Bed Booking"],
+//         "summary": "Delete bed booking",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Book bed",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "bookingId": {
+//                   "type": "number",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     },
+//     "/distance": {
+//       "post": {
+//         "tags": ["Location"],
+//         "summary": "Location",
+//         "description": "",
+//         "consumes": ["application/json", "application/xml"],
+//         "produces": ["application/xml", "application/json"],
+//         "parameters": [
+//           {
+//             "in": "body",
+//             "name": "body",
+//             "description": "Get location km wise",
+//             "required": true,
+//             "schema": {
+//               "type": "object",
+//               "properties": {
+//                 "myLocation": {
+//                   "type": "object",
+//                   "properties": {
+//                     "latitude": {
+//                       "type": "number",
+//                       "required": true
+//                     },
+//                     "longitude": {
+//                       "type": "number",
+//                       "required": true
+//                     }
+//                   }
+//                 },
+//                 "distance": {
+//                   "type": "number",
+//                   "required": true
+//                 }
+//               }
+//             }
+//           }
+//         ],
+//         "responses": {}
+//       }
+//     }
+//   }
+// }
